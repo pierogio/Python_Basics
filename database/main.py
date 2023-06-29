@@ -1,24 +1,19 @@
 import mysql.connector
 
-
 def connection_database(host, user, password, database):
     connection = mysql.connector.connect(
         host=host,
-        user=,
+        user=user,
         password=password,
-        database=,
+        database=database,
         port=int(3307)
     )
+    return connection
 
-    return
+def get_users(query, connection):
+    return execute_query(query, connection)
 
-
-def get_users(query, ):
-    results = (query, )
-    return
-
-
-def execute_query(query, ):
+def execute_query(query, connection):
     cursor = connection.cursor()
     cursor.execute(query)
     rows = cursor.fetchall()
@@ -26,11 +21,8 @@ def execute_query(query, ):
     connection.close()
     return rows
 
-
 if __name__ == '__main__':
-    conn =
-    query = ""
-    get_users(, conn)
-
-
-
+    conn = connection_database("localhost", "root", "root", "gri")
+    query = "SELECT * FROM users"
+    results = get_users(query, conn)
+    print(results)

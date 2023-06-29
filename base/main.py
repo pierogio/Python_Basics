@@ -1,19 +1,18 @@
-# TODO completa la suma
 def sum(a, b):
-    return a +
+    return a + b
 
-
-# TODO prepara una función que multiplica dos números que recibe por argumento
 def mult(a, b):
+    return a * b
 
-
-# TODO prepara una función que genere números dentro de una lista
-
+def range_numeros(n):
+    numeros = []
+    for i in range(n):
+        numeros.append(i)
+    return numeros
 
 if __name__ == '__main__':
-    # TODO llama a la función suma y printa el resultado por pantalla
-    # TODO llama la función multiplicar y printa el resultado por pantalla
-    print(mult(, ))
-    # TODO llama a la función de generar numeros y printa la lista generada
+    print(sum(2, 3))
+    print(mult(4, 5))
+    print(range_numeros(15))
 
 
